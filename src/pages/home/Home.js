@@ -64,7 +64,9 @@ class App extends Component {
   }
 
   handleChange(e) {
+    
     this.setState({ [e.name]: e.value });
+    console.log(this.state.drawItems)
   }
 
   handleSkipAnimationChange = () => {
@@ -127,10 +129,25 @@ class App extends Component {
           <meta charSet="utf-8" />
           <script type="application/ld+json">{HOME}</script>
         </Helmet>
+        <Grid.Row>
+          <Grid.Col xs={12} md={12}>
+            <DrawForm
+              drawItems={drawItems}
+              onSubmit={this.handleSubmit}
+              handleSkipAnimationChange={this.handleSkipAnimationChange}
+              handleRemoveDrawnItemChange={this.handleRemoveDrawnItemChange}
+              onChange={this.handleChange}
+              placeholder={placeholder}
+              style={style.drawForm}
+            />
+          </Grid.Col>
+        </Grid.Row>
+
+        <hr />
         {items.length !== 0 && (
           <div className="draw-block">
             <Grid.Row>
-              <Grid.Col md={5} sm={12}>
+              <Grid.Col md={12} sm={12}>
                 <div className="draw-section">
                   {!showResult && items && (
                     <TextLoop
@@ -154,26 +171,15 @@ class App extends Component {
                   {disableDrawButton ? "Drawing..." : "Draw"}
                 </Button>
               </Grid.Col>
-              <Grid.Col md={4} sm={12}>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Col md={12} sm={12}>
                 <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
               </Grid.Col>
             </Grid.Row>
           </div>
         )}
-        <Grid.Row>
-          <Grid.Col xs={12} md={8}>
-            <DrawForm
-              drawItems={drawItems}
-              onSubmit={this.handleSubmit}
-              handleSkipAnimationChange={this.handleSkipAnimationChange}
-              handleRemoveDrawnItemChange={this.handleRemoveDrawnItemChange}
-              onChange={this.handleChange}
-              placeholder={placeholder}
-              style={style.drawForm}
-            />
-          </Grid.Col>
-        </Grid.Row>
-        <hr />
+
         {/* <Grid.Row>
           <Grid.Col xs={12} md={8}>
             <h2>Sponsors</h2>
