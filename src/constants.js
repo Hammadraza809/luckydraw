@@ -1,1 +1,1 @@
-export let APP_NAME="Lucky Draw Simulator";
+export let APP_NAME="Dream Car Simulator";

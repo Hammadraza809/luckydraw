@@ -28,7 +28,7 @@ class App extends Component {
       pastDrawnItems: [],
       result: "",
       showTextAnimation: true,
-      removeDrawnItem: false,
+      removeDrawnItem: true,
       animationInterval: 150,
       showResult: false,
       disableDrawButton: false,
@@ -45,9 +45,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSkipAnimationChange = this.handleSkipAnimationChange.bind(this);
-    this.handleRemoveDrawnItemChange = this.handleRemoveDrawnItemChange.bind(
-      this
-    );
+    this.handleRemoveDrawnItemChange = this.handleRemoveDrawnItemChange.bind(this);
   }
 
   handleSubmit(e) {
@@ -171,11 +169,15 @@ class App extends Component {
                   {disableDrawButton ? "Drawing..." : "Draw"}
                 </Button>
               </Grid.Col>
+<<<<<<< HEAD
             </Grid.Row>
             <Grid.Row>
               <Grid.Col md={12} sm={12}>
+=======
+              {/* <Grid.Col md={4} sm={12}>
+>>>>>>> a32e5bc7b013378056e079b08f1ce8393d8a276c
                 <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
-              </Grid.Col>
+              </Grid.Col> */}
             </Grid.Row>
           </div>
         )}
