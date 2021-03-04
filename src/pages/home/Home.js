@@ -174,7 +174,7 @@ class App extends Component {
           </Grid.Col>
         </Grid.Row>
         <hr />
-        <Grid.Row>
+        {/* <Grid.Row>
           <Grid.Col xs={12} md={8}>
             <h2>Sponsors</h2>
             <p>Special thanks to the following companies.</p>
@@ -194,8 +194,8 @@ class App extends Component {
             </h3>
             <p>Contribute $300 or more to be featured.</p>
           </Grid.Col>
-        </Grid.Row>
-        <Grid.Row>
+        </Grid.Row> */}
+        {/* <Grid.Row>
           <Grid.Col xs={12} md={3}>
             <a href="https://www.ecembroid.com">
               <img
@@ -249,7 +249,7 @@ class App extends Component {
               </blockquote>
             </div>
           </Grid.Col>
-        </Grid.Row>
+        </Grid.Row> */}
       </SiteWrapper>
     );
   }
