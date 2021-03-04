@@ -6,14 +6,13 @@ import Faq from "./pages/faq/Faq";
 
 import "tabler-react/dist/Tabler.css";
 
-type Props = {||};
 
-function App(props: Props): React.Node {
+function App(){
   return (
     <React.StrictMode>
       <Router>
         <Switch>
-          <Route path="/faq" component={Faq} />
+          {/* <Route path="/faq" component={Faq} /> */}
           <Route exact path="/" component={Home} />
         </Switch>
       </Router>
