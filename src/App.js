@@ -13,7 +13,7 @@ function App(props: Props): React.Node {
     <React.StrictMode>
       <Router>
         <Switch>
-          <Route path="/faq" component={Faq} />
+          {/* <Route path="/faq" component={Faq} /> */}
           <Route exact path="/" component={Home} />
         </Switch>
       </Router>
