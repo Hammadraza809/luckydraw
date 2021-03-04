@@ -26,11 +26,12 @@ class DrawForm extends Component {
 
     return (
       <div style={style} className={className}>
-        <Header.H3>Configuration</Header.H3>
+        {/* <Header.H3>Configuration</Header.H3> */}
         <div className="form">
           <Form onSubmit={onSubmit}>
             <Form.FieldSet>
               <Form.Group label="List of Items" isRequired>
+                {/*This is the text area where we enter list. This should come from database*/}
                 <Form.Textarea
                   name="drawItems"
                   placeholder={placeholder}
@@ -38,20 +39,20 @@ class DrawForm extends Component {
                   onChange={this.handleChange}
                 />
               </Form.Group>
-              <Form.Group>
+              {/* <Form.Group>
                 <Form.Checkbox
                   name="skipAnimation"
                   label="Skip Animation"
                   onChange={handleSkipAnimationChange}
                 />
-              </Form.Group>
-              <Form.Group>
+              </Form.Group> */}
+              {/* <Form.Group>
                 <Form.Checkbox
                   name="noRepeat"
                   label="Remove Drawn Item"
                   onChange={handleRemoveDrawnItemChange}
                 />
-              </Form.Group>
+              </Form.Group> */}
               <Button
                 color="primary"
                 type="submit"
