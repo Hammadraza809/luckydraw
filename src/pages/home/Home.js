@@ -15,6 +15,7 @@ const style = {
   drawForm: {
     width: "100%",
   },
+  
 };
 
 class App extends Component {
@@ -128,7 +129,7 @@ class App extends Component {
           <script type="application/ld+json">{HOME}</script>
         </Helmet>
         <Grid.Row>
-          <Grid.Col xs={12} md={12}>
+          <Grid.Col md={12} xs={12} sm={12} >
             <DrawForm
               drawItems={drawItems}
               onSubmit={this.handleSubmit}
@@ -169,15 +170,11 @@ class App extends Component {
                   {disableDrawButton ? "Drawing..." : "Draw"}
                 </Button>
               </Grid.Col>
-<<<<<<< HEAD
             </Grid.Row>
             <Grid.Row>
               <Grid.Col md={12} sm={12}>
-=======
-              {/* <Grid.Col md={4} sm={12}>
->>>>>>> a32e5bc7b013378056e079b08f1ce8393d8a276c
                 <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
-              </Grid.Col> */}
+              </Grid.Col> 
             </Grid.Row>
           </div>
         )}
