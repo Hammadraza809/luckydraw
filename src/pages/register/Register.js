@@ -7,7 +7,12 @@ class Register extends Component {
     return (
       <div className="container">
         <Grid.Row>
-          <Grid.Col>
+          <Grid.Col md={6} xs={12} sm={12}>
+            <Form.Group label="Input Icon">
+              <Form.Input icon="user" placeholder="Username" />
+            </Form.Group>
+          </Grid.Col>
+          <Grid.Col md={6} xs={12} sm={12}>
             <Form.Group label="Input Icon">
               <Form.Input icon="user" placeholder="Username" />
             </Form.Group>
