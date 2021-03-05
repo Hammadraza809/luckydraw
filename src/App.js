@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Faq from "./pages/faq/Faq";
 
 import "tabler-react/dist/Tabler.css";
+import Register from "./pages/register/Register";
 
 
 function App(){
@@ -12,8 +13,8 @@ function App(){
     <React.StrictMode>
       <Router>
         <Switch>
-          {/* <Route path="/faq" component={Faq} /> */}
-          <Route exact path="/" component={Home} />
+          <Route exact path="/register" component={Register} />
+          <Route path="/" component={Home} />
         </Switch>
       </Router>
     </React.StrictMode>
