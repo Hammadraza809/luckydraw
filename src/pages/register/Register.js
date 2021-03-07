@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import "./Register.css";
 import { Button, Grid, Form } from "tabler-react";
 import CreateGroupModal from "../create-group-modal/CreateGroupModal";
-
 class Register extends Component {
   constructor(props) {
     super(props);
     this.showGroupModal = React.createRef();
-    
   }
   onRegister = () => {
     this.showGroupModal.showModal();
@@ -15,7 +13,7 @@ class Register extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <div className="container">
           <div className="form-wrapper">
             <div className="form-element">
@@ -66,9 +64,10 @@ class Register extends Component {
               </Grid.Row>
             </div>
           </div>
+          <CreateGroupModal ref={(target) => (this.showGroupModal = target)} location={this.props.history} />
+         
         </div>
-        <CreateGroupModal ref={(target) => (this.showGroupModal = target)} />
-      </div>
+      </>
     );
   }
 }

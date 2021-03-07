@@ -1,6 +1,19 @@
 import React, { useState } from "react";
-import { Modal, Button } from "antd";
-
+import Modal from "react-modal";
+import { Button, Grid, Form } from "tabler-react";
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "30%",
+    height: "20%",
+  },
+};
+Modal.setAppElement('#root')
 class CreateGroupModal extends React.Component {
   constructor() {
     super();
@@ -12,9 +25,6 @@ class CreateGroupModal extends React.Component {
       username: "",
       password: "",
     };
-
-    this._next = this._next.bind(this);
-    this._prev = this._prev.bind(this);
   }
 
   showModal = () => {
@@ -22,117 +32,49 @@ class CreateGroupModal extends React.Component {
       visible: true,
     });
   };
-  handleChange(event) {
-    console.log(event.target);
-    // const { name, value } = event.target
-    // this.setState({
-    //     [name]: value
-    // })
-  }
-
-  // Trigger an alert on form submission
-  handleSubmit = (event) => {
-    console.log(event);
-    //     event.preventDefault()
-    //     const { email, username, password } = this.state
-    //     alert(`Your registration detail: \n
-    // Email: ${email} \n
-    // Username: ${username} \n
-    // Password: ${password}`)
-  };
-
-  handleOk = () => {
-    this.setState({ loading: true });
-    setTimeout(() => {
-      this.setState({ loading: false, visible: false });
-    }, 3000);
-  };
-
-  handleCancel = () => {
+  closeModal = () => {
     this.setState({ visible: false });
   };
-  _next() {
-    let currentStep = this.state.currentStep;
-    // If the current step is 1 or 2, then add one on "next" button click
-    currentStep = currentStep >= 1 ? 2 : currentStep + 1;
-    this.setState({
-      currentStep: currentStep,
-    });
+  onRegister = ()=>{
+    
   }
-
-  _prev() {
-    let currentStep = this.state.currentStep;
-    // If the current step is 2 or 3, then subtract one on "previous" button click
-    currentStep = currentStep <= 1 ? 1 : currentStep - 1;
-    this.setState({
-      currentStep: currentStep,
-    });
-  }
-  previousButton() {
-    let currentStep = this.state.currentStep;
-    // If the current step is not 1, then render the "previous" button
-    if (currentStep !== 1) {
-      return (
-        <button
-          className="btn btn-secondary"
-          type="button"
-          onClick={this._prev}
-        >
-          Previous
-        </button>
-      );
-    }
-    // ...else return nothing
-    return null;
-  }
-
-  nextButton() {
-    let currentStep = this.state.currentStep;
-    // If the current step is not 3, then render the "next" button
-    if (currentStep < 2) {
-      return (
-        <div
-          style={{
-            flex: 1,
-
-            justifyContent: "flex-end",
-            alignItems: "flex-end",
-          }}
-        >
-          <button type="button" onClick={this._next}>
-            Next
-          </button>
-        </div>
-      );
-    }
-    // ...else render nothing
-    return null;
+  goToGame = () => {
+    
+    this.props.location.push('/')
   }
   render() {
     const { visible, loading } = this.state;
     return (
       <Modal
-        style={{ height: "50vh", width: "100%", background: "black" }}
-        visible={visible}
-        title="New Group Chat"
-        cancelButtonProps={{ style: { display: "none" } }}
-        okButtonProps={{ style: { display: "none" } }}
-        onOk={this.handleOk}
-        onCancel={this.handleCancel}
-        footer={
-          (this.previousButton(), this.nextButton())
-
-          //   <Button key="back" onClick={this.handleCancel}>
-          //       Return
-          //   </Button>,
-          //   <Button key="submit" type="primary" loading={loading} onClick={this.handleOk}>
-          //       Submit
-          //   </Button>,
-        }
+        isOpen={visible}
+        onRequestClose={this.closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
       >
-          <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <div
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Grid.Row>
+            <Grid.Col>
+              <Button.List align="center">
+                <Button color="primary" onClick={this.onRegister}>
+                  Register
+                </Button>
+                <Button color="primary" onClick={this.goToGame}>
+                  Game
+                </Button>
+              </Button.List>
+            </Grid.Col>
+          </Grid.Row>
+        </div>
+
+        {/* <button onClick={this.closeModal}>close</button> */}
       </Modal>
     );
   }

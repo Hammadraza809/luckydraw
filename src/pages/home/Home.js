@@ -9,7 +9,7 @@ import DrawForm from "../../components/DrawForm";
 import PreviouslyDrawnItemsBlock from "../../components/PreviouslyDrawnItemsBlock";
 import SiteWrapper from "../../SiteWrapper";
 import "tabler-react/dist/Tabler.css";
-import { HOME } from "../Json-ld";
+// import { HOME } from "../Json-ld";
 
 const style = {
   drawForm: {
@@ -65,7 +65,7 @@ class App extends Component {
   handleChange(e) {
     
     this.setState({ [e.name]: e.value });
-    console.log(this.state.drawItems)
+    
   }
 
   handleSkipAnimationChange = () => {
@@ -84,7 +84,7 @@ class App extends Component {
     const { currentItems, showTextAnimation, removeDrawnItem } = this.state;
     this.setState({
       ...this.state,
-      showResult: false,
+      showResult: true,
       disableDrawButton: true,
     });
 
@@ -98,7 +98,7 @@ class App extends Component {
           ...this.state.pastDrawnItems,
           currentItems[randomIndex],
         ],
-        showResult: true,
+        showResult: false,
         disableDrawButton: false,
       });
     });
@@ -124,10 +124,10 @@ class App extends Component {
     } = this.state;
     return (
       <SiteWrapper>
-        <Helmet>
+        {/* <Helmet>
           <meta charSet="utf-8" />
           <script type="application/ld+json">{HOME}</script>
-        </Helmet>
+        </Helmet> */}
         <Grid.Row>
           <Grid.Col md={12} xs={12} sm={12} >
             <DrawForm
@@ -148,7 +148,7 @@ class App extends Component {
             <Grid.Row>
               <Grid.Col md={12} sm={12}>
                 <div className="draw-section">
-                  {!showResult && items && (
+                  {showResult && items && (
                     <TextLoop
                       className="draw-text"
                       interval={100}
@@ -157,7 +157,7 @@ class App extends Component {
                     />
                   )}
                   <Confetti active={this.state.showResult} />
-                  {showResult && result}
+                  {!showResult && result}
                 </div>
                 <Button
                   pill
