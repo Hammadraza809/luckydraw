@@ -6,13 +6,14 @@ import Faq from "./pages/faq/Faq";
 
 import "tabler-react/dist/Tabler.css";
 import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
 
-
-function App(){
+function App() {
   return (
     <React.StrictMode>
       <Router>
         <Switch>
+          <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route path="/" component={Home} />
         </Switch>
