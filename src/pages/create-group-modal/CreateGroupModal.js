@@ -67,7 +67,7 @@ class CreateGroupModal extends React.Component {
                   Register
                 </Button>
                 <Button color="primary" onClick={this.goToGame}>
-                  Game
+                  Start Draw
                 </Button>
               </Button.List>
             </Grid.Col>
