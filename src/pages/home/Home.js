@@ -173,11 +173,16 @@ class App extends Component {
                 </Button>
               </Grid.Col>
             </Grid.Row>
-            <Grid.Row>
+            {/* <Grid.Row>
               <Grid.Col md={12} sm={12}>
                 <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
+<<<<<<< HEAD
               </Grid.Col>
             </Grid.Row>
+=======
+              </Grid.Col> 
+            </Grid.Row> */}
+>>>>>>> 4e853a1df4821772b6427597c56b5161fef3846a
           </div>
         )}
 
