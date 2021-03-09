@@ -15,13 +15,15 @@ const style = {
   drawForm: {
     width: "100%",
   },
-  
 };
 
 class App extends Component {
   constructor(props) {
     super(props);
-
+    let user = localStorage.getItem("user");
+    if (!user) {
+      this.props.history.push("/login");
+    }
     this.state = {
       items: [],
       drawItems: [],
@@ -46,7 +48,9 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSkipAnimationChange = this.handleSkipAnimationChange.bind(this);
-    this.handleRemoveDrawnItemChange = this.handleRemoveDrawnItemChange.bind(this);
+    this.handleRemoveDrawnItemChange = this.handleRemoveDrawnItemChange.bind(
+      this
+    );
   }
 
   handleSubmit(e) {
@@ -63,9 +67,7 @@ class App extends Component {
   }
 
   handleChange(e) {
-    
     this.setState({ [e.name]: e.value });
-    
   }
 
   handleSkipAnimationChange = () => {
@@ -129,7 +131,7 @@ class App extends Component {
           <script type="application/ld+json">{HOME}</script>
         </Helmet> */}
         <Grid.Row>
-          <Grid.Col md={12} xs={12} sm={12} >
+          <Grid.Col md={12} xs={12} sm={12}>
             <DrawForm
               drawItems={drawItems}
               onSubmit={this.handleSubmit}
@@ -174,7 +176,7 @@ class App extends Component {
             <Grid.Row>
               <Grid.Col md={12} sm={12}>
                 <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
-              </Grid.Col> 
+              </Grid.Col>
             </Grid.Row>
           </div>
         )}
