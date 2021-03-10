@@ -136,26 +136,32 @@ http://mydreamcommittee.com/user_registration.php
   </tr>
   <tr>
     <td>nextofkin</td>
-    <td>cnic</td>
-    <td>fathername</td>
-    <td>mobileno</td>
-    <td>membershipid</td>
-    <td>refrenceid</td>
-  </tr>
-  <tr>
     <td>hammad</td>
-    <td>00000-0000000-0</td>
-    <td>raza</td>
-    <td>0312-3456789</td>
-    <td>DCC-01</td>
-    <td>01</td>
+    <td>varchar</td>
   </tr>
   <tr>
+    <td>cnic</td>
+    <td>00000-0000000-0</td>
     <td>varchar</td>
+  </tr>
+  <tr>
+    <td>fathername</td>
+    <td>raza</td>
     <td>varchar</td>
+  </tr>
+  <tr>
+    <td>mobileno</td>
+    <td>0312-3456789</td>
     <td>varchar</td>
+  </tr>
+  <tr>
+    <td>membershipid</td>
+    <td>DCC-01</td>
     <td>varchar</td>
-    <td>varchar</td>
+  </tr>
+  <tr>
+    <td>refrenceid</td>
+    <td>01</td>
     <td>varchar</td>
   </tr>
 </table>
