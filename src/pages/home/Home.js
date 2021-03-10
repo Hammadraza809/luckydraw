@@ -52,7 +52,23 @@ class App extends Component {
       this
     );
   }
-
+  componentDidMount(){
+    this.getUsers()
+  }
+  async getUsers(){
+    await fetch('http://mydreamcommittee.com/get_userslist.php',{
+      method: 'GET'
+    })
+    .then(res => res.json())
+    .then((result)=>{
+      this.setState({
+        ...this.state,
+        items: result,
+        currentItems: result,
+      });
+    
+    })
+  }
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.drawItems.length > 2) {
@@ -84,21 +100,24 @@ class App extends Component {
 
   randomDrawItem = () => {
     const { currentItems, showTextAnimation, removeDrawnItem } = this.state;
+    const currItems = currentItems.map(res => {
+      return res.membershipid
+    })
     this.setState({
       ...this.state,
       showResult: true,
       disableDrawButton: true,
     });
 
-    let maxItemIndex = currentItems.length;
+    let maxItemIndex = currItems.length;
     const randomIndex = Math.floor(Math.random() * maxItemIndex);
     this.sleep(showTextAnimation ? 3000 : 0).then(() => {
       this.setState({
         ...this.state,
-        result: currentItems[randomIndex],
+        result: currItems[randomIndex],
         pastDrawnItems: [
           ...this.state.pastDrawnItems,
-          currentItems[randomIndex],
+          currItems[randomIndex],
         ],
         showResult: false,
         disableDrawButton: false,
@@ -124,13 +143,19 @@ class App extends Component {
       placeholder,
       showResult,
     } = this.state;
+    // console.log(items)
+    
+    const newItems = items.map(res => {
+      return res.membershipid
+    })
+    
     return (
       <SiteWrapper>
         {/* <Helmet>
           <meta charSet="utf-8" />
           <script type="application/ld+json">{HOME}</script>
         </Helmet> */}
-        <Grid.Row>
+        {/* <Grid.Row>
           <Grid.Col md={12} xs={12} sm={12}>
             <DrawForm
               drawItems={drawItems}
@@ -142,7 +167,7 @@ class App extends Component {
               style={style.drawForm}
             />
           </Grid.Col>
-        </Grid.Row>
+        </Grid.Row> */}
 
         <hr />
         {items.length !== 0 && (
@@ -150,14 +175,15 @@ class App extends Component {
             <Grid.Row>
               <Grid.Col md={12} sm={12}>
                 <div className="draw-section">
-                  {showResult && items && (
+                  {showResult && items && 
+                    
                     <TextLoop
                       className="draw-text"
                       interval={100}
                       springConfig={{ stiffness: 180, damping: 8 }}
-                      children={items}
+                      children={newItems}
                     />
-                  )}
+                  }
                   <Confetti active={this.state.showResult} />
                   {!showResult && result}
                 </div>
@@ -176,13 +202,8 @@ class App extends Component {
             {/* <Grid.Row>
               <Grid.Col md={12} sm={12}>
                 <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
-<<<<<<< HEAD
-              </Grid.Col>
-            </Grid.Row>
-=======
               </Grid.Col> 
             </Grid.Row> */}
->>>>>>> 4e853a1df4821772b6427597c56b5161fef3846a
           </div>
         )}
 

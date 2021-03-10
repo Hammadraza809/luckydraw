@@ -8,19 +8,29 @@ import "tabler-react/dist/Tabler.css";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
 import Winner from "./pages/winner/Winner";
+const imgMyimageexample = require('../src/assets/images/bg.jpg');
+
+const divStyle = {
+  width: '88%',
+  height: '800px',
+  backgroundImage: `url(${imgMyimageexample})`,
+  backgroundSize: 'cover'
+}
 
 function App() {
   return (
-    <React.StrictMode>
-      <Router>
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/winner" component={Winner} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </Router>
-    </React.StrictMode>
+    // <div style={{}}>
+      <React.StrictMode>
+        <Router>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/winner" component={Winner} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </Router>
+      </React.StrictMode>
+    // </div>
   );
 }
 
