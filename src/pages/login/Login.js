@@ -52,7 +52,7 @@ class Login extends Component {
                 <Form.Group label="Input Icon">
                   <Form.Input
                     icon="user"
-                    placeholder="Username"
+                    placeholder="Password"
                     onChange={(e) => this.setState({ pwd: e.target.value })}
                   />
                 </Form.Group>

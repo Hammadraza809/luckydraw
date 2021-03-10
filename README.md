@@ -14,7 +14,7 @@
 <a href="https://github.com/thefiend/lucky-draw/pulls"><img src="https://camo.githubusercontent.com/a5ad72c42e9333e5117b973083ab304c8a787c4a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d677265656e2e737667" alt="PRs Welcome" data-canonical-src="https://img.shields.io/badge/PRs-welcome-green.svg" style="max-width:100%;"></a>
 
 
-**[Demo](https://luckydraw.me)** | **[Issues](https://github.com/thefiend/lucky-draw/issues)**
+<!-- **[Demo](https://luckydraw.me)** | **[Issues](https://github.com/thefiend/lucky-draw/issues)**
 
 ## What is this?
 Ever faced this issue whereby you need to randomly select a winner but can't seem to find a beautiful and transparent way of doing so? Here's the solution to your headache! Lucky Draw allows you to randomly choose a winner easily.
@@ -121,4 +121,49 @@ Support this project by becoming a sponsor. Your logo/profile picture will show 
 
 ## Disclaimer
 
-I am providing code in the repository to you under an open source license. Because this is my personal repository, the license you receive to my code is from me and not my employer.
+I am providing code in the repository to you under an open source license. Because this is my personal repository, the license you receive to my code is from me and not my employer. -->
+
+## Registration API
+User Registration API
+http://mydreamcommittee.com/user_registration.php
+
+## Keys
+
+keys:                 values:               datatypes:
+nextofkin             hammad                varchar
+cnic                  00000-0000000-0       varchar
+fathername            raza                  varchar
+mobileno              0312-3456789          varchar
+membershipid          DCC-01                varchar
+refrenceid            01                    varchar
+winner                false                 varchar
+customwinner          false                 varchar
+
+## Get List if registered members
+Getting data of a single column "Membership Id" column for spin.
+
+API:
+http://mydreamcommittee.com/get_userslist.php
+
+Response will be in JSON fomate
+
+key value formate
+
+API Response:
+[
+    {
+        "membershipid": "DCC-01"
+    },
+    {
+        "membershipid": "DCC-01"
+    },
+    {
+        "membershipid": "DCC-02"
+    },
+    {
+        "membershipid": "DCC-03"
+    },
+    {
+        "membershipid": "DCC-03"
+    }
+]
