@@ -128,16 +128,37 @@ User Registration API
 http://mydreamcommittee.com/user_registration.php
 
 ## Keys
-
-keys:                 values:               datatypes:
-nextofkin             hammad                varchar
-cnic                  00000-0000000-0       varchar
-fathername            raza                  varchar
-mobileno              0312-3456789          varchar
-membershipid          DCC-01                varchar
-refrenceid            01                    varchar
-winner                false                 varchar
-customwinner          false                 varchar
+<table style="width:100%">
+  <tr>
+    <th>Keys</th>
+    <th>Values</th>
+    <th>Datatypes</th>
+  </tr>
+  <tr>
+    <td>nextofkin</td>
+    <td>cnic</td>
+    <td>fathername</td>
+    <td>mobileno</td>
+    <td>membershipid</td>
+    <td>refrenceid</td>
+  </tr>
+  <tr>
+    <td>hammad</td>
+    <td>00000-0000000-0</td>
+    <td>raza</td>
+    <td>0312-3456789</td>
+    <td>DCC-01</td>
+    <td>01</td>
+  </tr>
+  <tr>
+    <td>varchar</td>
+    <td>varchar</td>
+    <td>varchar</td>
+    <td>varchar</td>
+    <td>varchar</td>
+    <td>varchar</td>
+  </tr>
+</table>
 
 ## Get List if registered members
 Getting data of a single column "Membership Id" column for spin.
