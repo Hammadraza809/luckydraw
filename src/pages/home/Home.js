@@ -195,7 +195,7 @@ class App extends Component {
                   onClick={this.randomDrawItem}
                   disabled={disableDrawButton || currentItems.length <= 1}
                 >
-                  {disableDrawButton ? "Drawing..." : "Start Draw"}
+                  {disableDrawButton ? "Drawing..." : "Draw"}
                 </Button>
               </Grid.Col>
             </Grid.Row>
