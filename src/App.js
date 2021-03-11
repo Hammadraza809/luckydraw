@@ -11,8 +11,8 @@ import Winner from "./pages/winner/Winner";
 const imgMyimageexample = require('../src/assets/images/bg.jpg');
 
 const divStyle = {
-  width: '88%',
-  height: '800px',
+  // width: '100%',
+  // height: '500px',
   backgroundImage: `url(${imgMyimageexample})`,
   backgroundSize: 'cover'
 }

@@ -9,8 +9,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    width: "30%",
-    height: "20%",
+    width: "50%",
+    height: "50%",
   },
 };
 Modal.setAppElement('#root')
@@ -35,11 +35,14 @@ class CreateGroupModal extends React.Component {
   closeModal = () => {
     this.setState({ visible: false });
   };
-  onRegister = ()=>{
-    
+  onRegisterNewUser = () => {
+    // console.log("user===",this.props.location)
+    // this.props.location.push('/register')
+    this.closeModal()
+
   }
   goToGame = () => {
-    
+
     this.props.location.push('/')
   }
   render() {
@@ -58,12 +61,18 @@ class CreateGroupModal extends React.Component {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            flexDirection:'column'
           }}
         >
           <Grid.Row>
             <Grid.Col>
+              <h1>User Register Successfully</h1>
+            </Grid.Col>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Col>
               <Button.List align="center">
-                <Button color="primary" onClick={this.onRegister}>
+                <Button color="primary" onClick={this.onRegisterNewUser}>
                   Register New User
                 </Button>
                 <Button color="primary" onClick={this.goToGame}>

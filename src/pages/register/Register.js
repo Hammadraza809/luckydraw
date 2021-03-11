@@ -18,7 +18,9 @@ class Register extends Component {
       customWinner: false,
     };
   }
-  onRegister = () => {
+  onRegister = (e) => {
+    e.preventDefault();
+
     const {
       nextOfKin,
       idCard,
@@ -39,7 +41,7 @@ class Register extends Component {
     formdata.append("refrenceid", referenceId);
     formdata.append("winner", winner);
     formdata.append("customwinner", customWinner);
-    fetch(`http://mydreamcommittee.com/user_registration.php`, {
+    fetch('http://mydreamcommittee.com/user_registration.php', {
       method: "POST",
 
       body: formdata,
@@ -47,14 +49,34 @@ class Register extends Component {
       .then((res) => res.text())
       .then((result) => {
         if (result == "Inserted") {
-          this.showGroupModal.showModal();
-        } else {
-          console.log("inncorrect");
-        }
-      });
+    this.showGroupModal.showModal();
+    this.setState({
+      nextOfKin: "",
+      idCard: "",
+      fatherName: "",
+      mobileNo: "",
+      memberShipId: "",
+      referenceId: "",
+      winner: false,
+      customWinner: false,
+    })
+      } else {
+        console.log("inncorrect");
+      }
+    });
   };
 
   render() {
+    const {
+      nextOfKin,
+      idCard,
+      fatherName,
+      mobileNo,
+      memberShipId,
+      winner,
+      customWinner,
+      referenceId,
+    } = this.state;
     return (
       <>
         <div className="container">
@@ -66,6 +88,7 @@ class Register extends Component {
                     <Form.Input
                       icon="user"
                       placeholder="Next of kin"
+                      value={nextOfKin}
                       onChange={(e) =>
                         this.setState({ nextOfKin: e.target.value })
                       }
@@ -77,6 +100,7 @@ class Register extends Component {
                     <Form.Input
                       icon="user"
                       placeholder="CNIC"
+                      value={idCard}
                       onChange={(e) =>
                         this.setState({ idCard: e.target.value })
                       }
@@ -90,6 +114,7 @@ class Register extends Component {
                     <Form.Input
                       icon="user"
                       placeholder="Father Name"
+                      value={fatherName}
                       onChange={(e) =>
                         this.setState({ fatherName: e.target.value })
                       }
@@ -101,6 +126,7 @@ class Register extends Component {
                     <Form.Input
                       icon="user"
                       placeholder="Mobile No"
+                      value={mobileNo}
                       onChange={(e) =>
                         this.setState({ mobileNo: e.target.value })
                       }
@@ -110,10 +136,11 @@ class Register extends Component {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Col md={6} xs={12} sm={12}>
-                  <Form.Group label="Member Ship Id">
+                  <Form.Group label="Membership Id">
                     <Form.Input
                       icon="user"
-                      placeholder="Member Ship Id"
+                      placeholder="Membership Id"
+                      value={memberShipId}
                       onChange={(e) =>
                         this.setState({ memberShipId: e.target.value })
                       }
@@ -125,6 +152,7 @@ class Register extends Component {
                     <Form.Input
                       icon="user"
                       placeholder="Reference Id"
+                      value={referenceId}
                       onChange={(e) =>
                         this.setState({ referenceId: e.target.value })
                       }
