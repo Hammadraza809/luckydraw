@@ -41,31 +41,11 @@ class Register extends Component {
     formdata.append("refrenceid", referenceId);
     formdata.append("winner", winner);
     formdata.append("customwinner", customWinner);
-<<<<<<< HEAD
     fetch('http://mydreamcommittee.com/user_registration.php', {
       method: "POST",
-=======
-    // fetch(`http://mydreamcommittee.com/user_registration.php`, {
-    //   method: "POST",
->>>>>>> 8f0611d8e3496181f9637689c3491ef5be24f0ae
 
-    //   body: formdata,
-    // })
-    //   .then((res) => res.text())
-    //   .then((result) => {
-    //     if (result == "Inserted") {
-    this.showGroupModal.showModal();
-    this.setState({
-      nextOfKin: " ",
-      idCard: " ",
-      fatherName: " ",
-      mobileNo: " ",
-      memberShipId: "",
-      referenceId: "",
-      winner: false,
-      customWinner: false,
+      body: formdata,
     })
-<<<<<<< HEAD
       .then((res) => res.text())
       .then((result) => {
         if (result == "Inserted") {
@@ -84,12 +64,6 @@ class Register extends Component {
         console.log("inncorrect");
       }
     });
-=======
-    //   } else {
-    //     console.log("inncorrect");
-    //   }
-    // });
->>>>>>> 8f0611d8e3496181f9637689c3491ef5be24f0ae
   };
 
   render() {
@@ -150,7 +124,6 @@ class Register extends Component {
                 <Grid.Col md={6} xs={12} sm={12}>
                   <Form.Group label="Mobile No">
                     <Form.Input
-
                       icon="user"
                       placeholder="Mobile No"
                       value={mobileNo}
@@ -163,14 +136,10 @@ class Register extends Component {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Col md={6} xs={12} sm={12}>
-                  <Form.Group label="Membership Id">
+                  <Form.Group label="Member Ship Id">
                     <Form.Input
                       icon="user"
-<<<<<<< HEAD
-                      placeholder="Membership Id"
-=======
                       placeholder="Member Ship Id"
->>>>>>> 8f0611d8e3496181f9637689c3491ef5be24f0ae
                       value={memberShipId}
                       onChange={(e) =>
                         this.setState({ memberShipId: e.target.value })
