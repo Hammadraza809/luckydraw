@@ -150,7 +150,7 @@ class App extends Component {
     })
     
     return (
-      <SiteWrapper>
+      <SiteWrapper location={this.props.history}>
         {/* <Helmet>
           <meta charSet="utf-8" />
           <script type="application/ld+json">{HOME}</script>

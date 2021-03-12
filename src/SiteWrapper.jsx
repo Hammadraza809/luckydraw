@@ -25,6 +25,10 @@ import { Site, Nav, Grid, List, Button } from "tabler-react";
 // ];
 
 class SiteWrapper extends React.Component {
+  onLogout = () =>{
+    localStorage.setItem('user',null)
+    this.props.location.push('/login')
+  }
   render() {
     return (
       <Site.Wrapper
@@ -49,7 +53,8 @@ class SiteWrapper extends React.Component {
                 RootComponent="a"
               /> */}
               <Button
-                href="/login"
+              onClick={this.onLogout}
+                // href="/login"
                 // target="_blank"
                 size="md"
                 RootComponent="a"
