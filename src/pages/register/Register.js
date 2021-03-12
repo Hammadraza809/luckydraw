@@ -8,19 +8,23 @@ class Register extends Component {
 
     this.showGroupModal = React.createRef();
     this.state = {
-      nextOfKin: "",
+      name: "",
       idCard: "",
       fatherName: "",
       mobileNo: "",
+      address: "",
+      cityname: "",
       memberShipId: "",
       referenceId: "",
       winner: false,
       customWinner: false,
       loading: false,
-      nextOfKinErorr: false,
+      nameErorr: false,
       idCardErorr: false,
       fatherNameErorr: false,
       mobileNoErorr: false,
+      addressErorr: false,
+      citynameError: false,
       referenceIdErorr: false,
       memberShipIdErorr: false,
     };
@@ -29,26 +33,32 @@ class Register extends Component {
     e.preventDefault();
     this.setState({ loading: true });
     const {
-      nextOfKin,
+      name,
       idCard,
       fatherName,
       mobileNo,
+      address,
+      cityname,
       memberShipId,
       winner,
       customWinner,
       referenceId,
-      nextOfKinErorr,
+      nameErorr,
       fatherNameErorr,
       referenceIdErorr,
       idCardErorr,
       mobileNoErorr,
+      addressError,
+      citynameError,
       memberShipIdErorr,
     } = this.state;
     if (
-      nextOfKin === "" &&
+      name === "" &&
       idCard === "" &&
       fatherName === "" &&
       mobileNo === "" &&
+      address === "" &&
+      cityname === "" &&
       memberShipId === "" &&
       referenceId === ""
     ) {
@@ -57,18 +67,24 @@ class Register extends Component {
         idCardErorr: true,
         fatherNameErorr: true,
         mobileNoErorr: true,
-        nextOfKinErorr: true,
+        addressErorr: true,
+        citynameErorr: true,
+        nameErorr: true,
         referenceIdErorr: true,
         memberShipIdErorr: true,
       });
-    } else if (nextOfKin === "") {
-      this.setState({ loading: false, nextOfKinErorr: true });
+    } else if (name === "") {
+      this.setState({ loading: false, name: true });
     } else if (idCard === "") {
       this.setState({ loading: false, idCardErorr: true });
     } else if (fatherName === "") {
       this.setState({ loading: false, fatherNameErorr: true });
     } else if (mobileNo === "") {
       this.setState({ loading: false, mobileNoErorr: true });
+    } else if (address === "") {
+      this.setState({ loading: false, addressErorr: true });
+    } else if (cityname === "") {
+      this.setState({ loading: false, citynameErorr: true });
     } else if (memberShipId === "") {
       this.setState({ loading: false, memberShipIdErorr: true });
     } else if (referenceId === "") {
@@ -76,10 +92,12 @@ class Register extends Component {
     } else {
       let formdata = new FormData();
 
-      formdata.append("nextofkin", nextOfKin);
+      formdata.append("name", name);
       formdata.append("cnic", idCard);
       formdata.append("fathername", fatherName);
       formdata.append("mobileno", mobileNo);
+      formdata.append("address", address);
+      formdata.append("cityname", cityname);
       formdata.append("membershipid", memberShipId);
       formdata.append("refrenceid", referenceId);
       formdata.append("winner", winner);
@@ -94,10 +112,12 @@ class Register extends Component {
           if (result == "Inserted") {
             this.showGroupModal.showModal();
             this.setState({
-              nextOfKin: "",
+              name: "",
               idCard: "",
               fatherName: "",
               mobileNo: "",
+              address: "",
+              cityname: "",
               memberShipId: "",
               referenceId: "",
               winner: false,
@@ -116,17 +136,21 @@ class Register extends Component {
 
   render() {
     const {
-      nextOfKin,
+      name,
       idCard,
       fatherName,
       mobileNo,
+      address,
+      cityname,
       memberShipId,
       referenceId,
-      nextOfKinErorr,
+      nameErorr,
       fatherNameErorr,
       referenceIdErorr,
       idCardErorr,
       mobileNoErorr,
+      addressErorr,
+      citynameErorr,
       memberShipIdErorr,
     } = this.state;
     return (
@@ -136,17 +160,17 @@ class Register extends Component {
             <div className="form-element">
               <Grid.Row>
                 <Grid.Col md={6} xs={12} sm={12}>
-                  <Form.Group label="Next of kin" isRequired>
+                  <Form.Group label="Name" isRequired>
                     <Form.Input
                       icon="user"
-                      placeholder="Next of kin"
-                      value={nextOfKin}
-                      onFocus={() => this.setState({ nextOfKinErorr: false })}
+                      placeholder="Name"
+                      value={name}
+                      onFocus={() => this.setState({ nameErorr: false })}
                       onChange={(e) =>
-                        this.setState({ nextOfKin: e.target.value })
+                        this.setState({ name: e.target.value })
                       }
                     />
-                    {nextOfKinErorr && (
+                    {nameErorr && (
                       <span style={{ color: "red" }}>Please fill out this</span>
                     )}
                   </Form.Group>
@@ -204,10 +228,44 @@ class Register extends Component {
               </Grid.Row>
               <Grid.Row>
                 <Grid.Col md={6} xs={12} sm={12}>
-                  <Form.Group label="Member Ship Id" isRequired>
+                  <Form.Group label="Address" isRequired>
                     <Form.Input
                       icon="user"
-                      placeholder="Member Ship Id"
+                      placeholder="Address"
+                      value={address}
+                      onFocus={() => this.setState({ addressErorr: false })}
+                      onChange={(e) =>
+                        this.setState({ address: e.target.value })
+                      }
+                    />
+                    {addressErorr && (
+                      <span style={{ color: "red" }}>Please fill out this</span>
+                    )}
+                  </Form.Group>
+                </Grid.Col>
+                <Grid.Col md={6} xs={12} sm={12}>
+                  <Form.Group label="City Name" isRequired>
+                    <Form.Input
+                      icon="user"
+                      placeholder="City Name"
+                      value={cityname}
+                      onFocus={() => this.setState({ citynameErorr: false })}
+                      onChange={(e) =>
+                        this.setState({ cityname: e.target.value })
+                      }
+                    />
+                    {citynameErorr && (
+                      <span style={{ color: "red" }}>Please fill out this</span>
+                    )}
+                  </Form.Group>
+                </Grid.Col>
+              </Grid.Row>
+              <Grid.Row>
+                <Grid.Col md={6} xs={12} sm={12}>
+                  <Form.Group label="Membership Id" isRequired>
+                    <Form.Input
+                      icon="user"
+                      placeholder="Membership Id"
                       value={memberShipId}
                       onFocus={() =>
                         this.setState({ memberShipIdErorr: false })

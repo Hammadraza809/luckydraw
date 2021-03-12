@@ -51,8 +51,7 @@ class SiteWrapper extends React.Component {
               <Button
                 href="/login"
                 // target="_blank"
-                
-                size="sm"
+                size="md"
                 RootComponent="a"
                 color="primary"
               >
