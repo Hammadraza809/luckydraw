@@ -21,7 +21,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     let user = localStorage.getItem("user");
-    if (user === "null") {
+    if (!user) {
       this.props.history.push("/login");
     }
     this.state = {

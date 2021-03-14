@@ -26,7 +26,7 @@ import { Site, Nav, Grid, List, Button } from "tabler-react";
 
 class SiteWrapper extends React.Component {
   onLogout = () =>{
-    localStorage.setItem('user',null)
+    localStorage.setItem('user',"")
     this.props.location.push('/login')
   }
   render() {
