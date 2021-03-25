@@ -9,6 +9,7 @@ import DrawForm from "../../components/DrawForm";
 import PreviouslyDrawnItemsBlock from "../../components/PreviouslyDrawnItemsBlock";
 import SiteWrapper from "../../SiteWrapper";
 import "tabler-react/dist/Tabler.css";
+import ShowPassModal from "../create-group-modal/ShowPassModal";
 // import { HOME } from "../Json-ld";
 
 const style = {
@@ -24,6 +25,7 @@ class App extends Component {
     if (!user) {
       this.props.history.push("/login");
     }
+    this.showConfirmModal = React.createRef();
     this.state = {
       items: [],
       drawItems: [],
@@ -39,6 +41,7 @@ class App extends Component {
       placeholder: "Please enter the draw items here. One item per line.",
       valid: false,
       touched: false,
+      showConfirm: false,
       validationRules: {
         minLength: 3,
         isRequired: true,
@@ -52,22 +55,22 @@ class App extends Component {
       this
     );
   }
-  componentDidMount(){
+  componentDidMount() {
     this.getUsers()
   }
-  async getUsers(){
-    await fetch('http://mydreamcommittee.com/get_userslist.php',{
+  async getUsers() {
+    await fetch('http://mydreamcommittee.com/get_userslist.php', {
       method: 'GET'
     })
-    .then(res => res.json())
-    .then((result)=>{
-      this.setState({
-        ...this.state,
-        items: result,
-        currentItems: result,
-      });
-    
-    })
+      .then(res => res.json())
+      .then((result) => {
+        this.setState({
+          ...this.state,
+          items: result,
+          currentItems: result,
+        });
+
+      })
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -107,6 +110,7 @@ class App extends Component {
       ...this.state,
       showResult: true,
       disableDrawButton: true,
+
     });
 
     let maxItemIndex = currItems.length;
@@ -121,9 +125,11 @@ class App extends Component {
         ],
         showResult: false,
         disableDrawButton: false,
+        showConfirm: true
       });
     });
     if (removeDrawnItem) {
+      console.log(removeDrawnItem)
       const copyCurrentItems = [...this.state.currentItems];
       copyCurrentItems.splice(randomIndex, 1);
       this.setState({
@@ -131,7 +137,12 @@ class App extends Component {
       });
     }
   };
-
+  showModal = () => {
+    this.showConfirmModal.showModal();
+  }
+  hideConfirm = () =>{
+    this.setState({showConfirm: false})
+  }
   render() {
     const {
       items,
@@ -142,13 +153,14 @@ class App extends Component {
       pastDrawnItems,
       placeholder,
       showResult,
+      showConfirm
     } = this.state;
     // console.log(items)
-    
+
     const newItems = items.map(res => {
       return res.membershipid
     })
-    
+
     return (
       <SiteWrapper location={this.props.history}>
         {/* <Helmet>
@@ -169,14 +181,14 @@ class App extends Component {
           </Grid.Col>
         </Grid.Row> */}
 
-        <hr />
+        {/* <hr /> */}
         {items.length !== 0 && (
           <div className="draw-block">
             <Grid.Row>
               <Grid.Col md={12} sm={12}>
                 <div className="draw-section">
-                  {showResult && items && 
-                    
+                  {showResult && items &&
+
                     <TextLoop
                       className="draw-text"
                       interval={100}
@@ -199,14 +211,28 @@ class App extends Component {
                 </Button>
               </Grid.Col>
             </Grid.Row>
-            {/* <Grid.Row>
-              <Grid.Col md={12} sm={12}>
-                <PreviouslyDrawnItemsBlock pastDrawnItems={pastDrawnItems} />
-              </Grid.Col> 
-            </Grid.Row> */}
+            <br />
+            {showConfirm &&
+              <Grid.Row>
+                <Grid.Col md={12} sm={12}>
+                  <Button
+                    color="primary"
+                    onClick={this.showModal}
+                  >
+                    Confirm
+                </Button>
+                </Grid.Col>
+              </Grid.Row>
+            }
           </div>
         )}
-
+        {showConfirm &&
+          <ShowPassModal
+            ref={(target) => (this.showConfirmModal = target)}
+            user={result}
+            hideConfirm={this.hideConfirm}
+            location={this.props.history}
+          />}
         {/* <Grid.Row>
           <Grid.Col xs={12} md={8}>
             <h2>Sponsors</h2>
