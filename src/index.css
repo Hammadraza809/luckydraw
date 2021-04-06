@@ -8,3 +8,6 @@ body,html {
   background-size: contain;
   background-position: center;
 }
+.carousel-item img{
+  height: 100vh;
+}

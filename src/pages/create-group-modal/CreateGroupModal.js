@@ -43,7 +43,7 @@ class CreateGroupModal extends React.Component {
   }
   goToGame = () => {
 
-    this.props.location.push('/')
+    this.props.location.push('/home')
   }
   render() {
     const { visible, loading } = this.state;
