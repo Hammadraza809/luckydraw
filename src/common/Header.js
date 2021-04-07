@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <div className="Header">
-        <Navbar bg="dark" variant="dark" expand="lg">
+        <Navbar bg="light" variant="light" expand="lg">
           <Navbar.Brand href="#home">
             <img src={logo} />
           </Navbar.Brand>

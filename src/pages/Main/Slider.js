@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel'
 import Image1 from '../../assets/images/image1.jpg';
 import Image2 from '../../assets/images/image2.jpg';
-import Image3 from '../../assets/images/image3.jpg';
 
 class Slide extends Component{
     render(){
@@ -32,7 +31,7 @@ class Slide extends Component{
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            {/* <Carousel.Item>
               <img
                 className="d-block w-100"
                 src={Image3}
@@ -43,7 +42,7 @@ class Slide extends Component{
                 <h3>Third slide label</h3>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
               </Carousel.Caption>
-            </Carousel.Item>
+            </Carousel.Item> */}
           </Carousel>
         )
     }
