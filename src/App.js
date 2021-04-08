@@ -10,13 +10,12 @@ import Login from "./pages/login/Login";
 import Winner from "./pages/winner/Winner";
 import About from "./pages/about";
 import Contact from "./pages/contact";
-const imgMyimageexample = require('../src/assets/images/bg.jpg');
 
 const divStyle = {
   // width: '100%',
   // height: '500px',
-  backgroundImage: `url(${imgMyimageexample})`,
-  backgroundSize: 'cover'
+  // backgroundImage: `url(${imgMyimageexample})`,
+  // backgroundSize: 'cover'
 }
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
             <Route exact path="/contact" component={Contact} />
             <Route path="/home" component={Home} />
             <Route exact path="/" component={Main} />
-            
           </Switch>
         </Router>
       </React.StrictMode>

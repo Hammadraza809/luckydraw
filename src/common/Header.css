@@ -1,0 +1,16 @@
+/* .head{
+    background-color: rgb(148, 81, 131) !important;
+    background-image: radial-gradient(rgb(255, 0, 255), rgb(238, 94, 231), rgb(252, 168, 41)); 
+    
+} */
+.navItem{
+    margin: 0px 30px 0px 30px;
+    /* padding: 0px 30px 0px 30px !important; */
+    font-size: large;
+    font-weight: 500;
+    
+}
+.navItem:hover, .navItem1:hover{
+    background-color: rgb(252, 143, 0);
+    border-radius: 5px;
+}
