@@ -10,7 +10,7 @@ class Main extends Component {
                 <div className="heading">
                     <h1>Who We Are?</h1>
                 </div>
-                <div className="content ">
+                <div className="content">
                     <Container>
                         <Row>
                             <Col xs={12} md={12}>
