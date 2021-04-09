@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import "./Content.css";
 
 class Main extends Component {
@@ -8,20 +10,47 @@ class Main extends Component {
                 <div className="heading">
                     <h1>Who We Are?</h1>
                 </div>
-                <div className="content">
-                    We are a group of organization who organize different committees.We are a group of organization who organize different committees.
-                    We are a group of organization who organize different committees.We are a group of organization who organize different committees.
-                    We are a group of organization who organize different committees.We are a group of organization who organize different committees.
-                    We are a group of organization who organize different committees.We are a group of organization who organize different committees.
+                <div className="content ">
+                    <Container>
+                        <Row>
+                            <Col xs={12} md={12}>
+                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
+                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
+                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
+                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
 
                 <div className="heading">
                     <h1>Committees</h1>
                 </div>
-                <div className="customCards">
-                    <div className="customCard">
-                        <h3>Dream Car Committee</h3>
-                    </div>
+                <div className="committees">
+                    <Container>
+                        <Row className="first-row">
+                            <Col xs={12} md={12} lg={4} className="committe">
+                                <h4>Dream Car <br/>Committee</h4>
+                            </Col>
+                            <Col xs={12} md={12} lg={4} className="committe">
+                                <h4>Dream Bike <br/>Committee</h4>
+                            </Col>
+                            <Col xs={12} md={12} lg={4} className="committe">
+                                <h4>Dream Mobile <br/>Committee</h4>
+                            </Col>
+                        </Row>
+                        <Row className="first-row">
+                            <Col xs={12} md={12} lg={4} className="committe">
+                                <h4>Dream Gold <br/>Committee</h4>
+                            </Col>
+                            <Col xs={12} md={12} lg={4} className="committe">
+                                <h4>Dream Tractor <br/>Committee</h4>
+                            </Col>
+                            <Col xs={12} md={12} lg={4} className="committe">
+                                <h4>Dream House <br/>Committee</h4>
+                            </Col>
+                        </Row>
+                    </Container>
                 </div>
                 {/* <h3>Dream Car Committee</h3>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../common/Header';
+import Footer from '../../common/Footer';
 import Slider from './Slider';
 import Content from './Content';
 function Main() {
@@ -8,6 +9,7 @@ function Main() {
       <Header/>
       <Slider/>
       <Content/>
+      <Footer/>
     </div>
   );
 }

@@ -17,12 +17,12 @@ class Header extends Component {
             <Nav className="mr">
               <Nav.Link className="navItem" href="/">Home</Nav.Link>
               <Nav.Link className="navItem" href="/about">About us</Nav.Link>
-              <Nav.Link className="navItem" href="/contact">Contact us</Nav.Link>
               <NavDropdown className="navItem" title="Committees">
                 <NavDropdown.Item className="navItem1" href="#action/3.1">Dream Car Committee</NavDropdown.Item>
                 <NavDropdown.Item className="navItem1" href="#action/3.2">Dream Gold Committee</NavDropdown.Item>
                 <NavDropdown.Item className="navItem1" href="#action/3.3">Dream Bike Committee</NavDropdown.Item>
               </NavDropdown>
+              <Nav.Link className="navItem" href="/contact">Contact us</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
