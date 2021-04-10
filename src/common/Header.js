@@ -18,9 +18,13 @@ class Header extends Component {
               <Nav.Link className="navItem" href="/">Home</Nav.Link>
               <Nav.Link className="navItem" href="/about">About us</Nav.Link>
               <NavDropdown className="navItem" title="Committees">
-                <NavDropdown.Item className="navItem1" href="#action/3.1">Dream Car Committee</NavDropdown.Item>
-                <NavDropdown.Item className="navItem1" href="#action/3.2">Dream Gold Committee</NavDropdown.Item>
-                <NavDropdown.Item className="navItem1" href="#action/3.3">Dream Bike Committee</NavDropdown.Item>
+                <NavDropdown.Item className="navItem1" href="/carcommittee">Dream Car Committee</NavDropdown.Item>
+                <NavDropdown.Item className="navItem1" href="#action/3.2" disabled>Dream Mobile Committee</NavDropdown.Item>
+                <NavDropdown.Item className="navItem1" href="#action/3.3" disabled>Dream Bike Committee</NavDropdown.Item>
+                <NavDropdown.Item className="navItem1" href="#action/3.3" disabled>Dream Tractor Committee</NavDropdown.Item>
+                <NavDropdown.Item className="navItem1" href="#action/3.3" disabled>Dream Gold Committee</NavDropdown.Item>
+                <NavDropdown.Item className="navItem1" href="#action/3.3" disabled>Dream House Committee</NavDropdown.Item>
+
               </NavDropdown>
               <Nav.Link className="navItem" href="/contact">Contact us</Nav.Link>
             </Nav>

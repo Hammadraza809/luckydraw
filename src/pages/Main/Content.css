@@ -9,7 +9,7 @@
 }
 .content{
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    text-align: justify;
+    text-align: center;
     font-size: 1.2rem;
     line-height: 1.6;
 }
@@ -28,7 +28,20 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #FFFFFF;
     text-transform: uppercase;
-    padding: 60px 0px;
     margin: 5px 0px;
     box-shadow: 5px 5px 5px grey;
+    display: flex;
+}
+.committe-text{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #FFFFFF;
+    text-transform: uppercase;
+    margin: 5px 0px;
+    box-shadow: 5px 5px 5px grey;
+    
+}
+.coming-soon{
+    vertical-align: middle;
+    font-family: cursive;
+    padding-top: 150px;
 }

@@ -3,9 +3,9 @@ import Header from '../../common/Header';
 import Footer from '../../common/Footer';
 import Content from './Content';
 
-function About() {
+function Carcommittee() {
     return (
-        <div className="App">
+        <div>
             <Header />
             <Content/>
             <Footer/>
@@ -13,4 +13,4 @@ function About() {
     );
 }
 
-export default About;
+export default Carcommittee;
