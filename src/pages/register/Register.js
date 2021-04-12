@@ -29,6 +29,15 @@ class Register extends Component {
       memberShipIdErorr: false,
     };
   }
+  //Button for go to draw
+  goToGame = () => {
+
+    this.props.history.push('/home')
+    // console.log(this.props);
+  }
+
+  //Button for go to draw end
+
   onRegister = (e) => {
     e.preventDefault();
     this.setState({ loading: true });
@@ -303,10 +312,12 @@ class Register extends Component {
                       color="primary"
                       type="submit"
                       loading={this.state.loading}
-                      size="lg"
                       onClick={this.onRegister}
                     >
                       Register
+                    </Button>
+                    <Button color="primary" onClick={this.goToGame}>
+                      Start Draw
                     </Button>
                   </Button.List>
                 </Grid.Col>

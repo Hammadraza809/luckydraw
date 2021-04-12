@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import "./Content.css";
 import Image1 from '../../assets/images/image1.jpg';
+import youtube from '../../assets/images/youtube.png';
 
 class Main extends Component {
     render() {
@@ -15,6 +16,13 @@ class Main extends Component {
                 </div>
                 <div className="contentt">
                     <Container>
+                        <Row className="staytunned">
+                            <Col>
+                                Stay Tuned with us <br />Dream Car Luckydraw will be held on <b>15th of April 2021</b> live on our youtube channel.<br />
+                                <a style={{ textDecoration: "none", color: "black" }} href="https://www.youtube.com/c/TV88OFFICIAL" target="_blank"><img style={{ width: "60px", height: "40px", margin: "10px" }} src={youtube} />Subscribe to our youtube channel</a>
+                                <br /><br />
+                            </Col>
+                        </Row>
                         <Row>
                             <Col xs={12} md={12}>
                                 <p>Great News for All Friends

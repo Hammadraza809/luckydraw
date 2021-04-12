@@ -115,7 +115,7 @@ class App extends Component {
 
     let maxItemIndex = currItems.length;
     const randomIndex = Math.floor(Math.random() * maxItemIndex);
-    this.sleep(showTextAnimation ? 3000 : 0).then(() => {
+    this.sleep(showTextAnimation ? 30000 : 0).then(() => {
       this.setState({
         ...this.state,
         result: currItems[randomIndex],

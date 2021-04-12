@@ -18,7 +18,7 @@ class Footer extends Component {
                     </Row>
                     <Row>
                         <Col className="list">
-                            <a href="https://www.youtube.com" target="_blank"><img style={{ width: "20px" }} src={youtube} /><p>YouTube</p></a>
+                            <a href="https://www.youtube.com/c/TV88OFFICIAL" target="_blank"><img style={{ width: "20px" }} src={youtube} /><p>YouTube</p></a>
                         </Col>
                     </Row>
                     {/* <Row>
