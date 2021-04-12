@@ -18,10 +18,26 @@ class Main extends Component {
                     <Container>
                         <Row>
                             <Col xs={12} md={12}>
-                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
-                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
-                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
-                                We are a group of organization who organize different committees.We are a group of organization who organize different committees.
+                                Dream Committee is the privately-owned lucky draw providing company in Pakistan. Having hundreds of trusted customers, the dream committee deals in providing easy and most effective solutions to make your dreams come true with its different types of committees in Pakistan.
+                                Our relationship with customers is purely loyal and we deal with them as a partner in these committees.
+                                <br />
+                                With just a basic amount you can now afford or can have your dream car, bike, home, gold, tractor, and mobile phone.
+                                <br />
+                                You don’t need to worry about affording a luxurious lifestyle, because my dream committee makes it true for you.
+                                <br />
+                                <hr/>
+                                <span className="types"><b>Type of Committees:</b><br /></span>
+                                Dream Committee provides different types of committees to its loyal customers. Some of them are listed below:
+                                <br/>
+                                <ul>
+                                    <li>Dream Car Committee</li>
+                                    <li>Dream Bike Committee</li>
+                                    <li>Dream House Committee</li>
+                                    <li>Dream Mobile Committee</li>
+                                    <li>Dream Tractor Committee</li>
+                                    <li>Dream Gold Committee</li>
+                                </ul>
+                                <hr/>
                             </Col>
                         </Row>
                     </Container>

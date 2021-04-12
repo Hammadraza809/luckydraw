@@ -10,6 +10,10 @@ import PreviouslyDrawnItemsBlock from "../../components/PreviouslyDrawnItemsBloc
 import SiteWrapper from "../../SiteWrapper";
 import "tabler-react/dist/Tabler.css";
 import ShowPassModal from "../create-group-modal/ShowPassModal";
+import car1 from "../../assets/images/car1.png"
+import car2 from "../../assets/images/car2.png"
+import car3 from "../../assets/images/car3.png"
+import car4 from "../../assets/images/car4.png"
 // import { HOME } from "../Json-ld";
 
 const style = {
@@ -140,8 +144,8 @@ class App extends Component {
   showModal = () => {
     this.showConfirmModal.showModal();
   }
-  hideConfirm = () =>{
-    this.setState({showConfirm: false})
+  hideConfirm = () => {
+    this.setState({ showConfirm: false })
   }
   render() {
     const {
@@ -162,26 +166,18 @@ class App extends Component {
     })
 
     return (
-      <SiteWrapper location={this.props.history}>
-        {/* <Helmet>
-          <meta charSet="utf-8" />
-          <script type="application/ld+json">{HOME}</script>
-        </Helmet> */}
-        {/* <Grid.Row>
-          <Grid.Col md={12} xs={12} sm={12}>
-            <DrawForm
-              drawItems={drawItems}
-              onSubmit={this.handleSubmit}
-              handleSkipAnimationChange={this.handleSkipAnimationChange}
-              handleRemoveDrawnItemChange={this.handleRemoveDrawnItemChange}
-              onChange={this.handleChange}
-              placeholder={placeholder}
-              style={style.drawForm}
-            />
-          </Grid.Col>
-        </Grid.Row> */}
-
-        {/* <hr /> */}
+      <SiteWrapper location={this.props.history} className="mainn">
+        <div className="texxt">
+          Welcome to the lucky draw for Dream Car Committee<br />
+          Your Dream Car is on your way .... <hr />
+        </div>
+        <div className="imgs">
+          <img style={{width:"200px"}} src={car1} />
+          <img style={{width:"200px"}} src={car2} />
+          <img style={{width:"200px"}} src={car3} />
+          <img style={{width:"200px"}} src={car4} />
+          <img style={{width:"200px"}} src={car3} />
+        </div>
         {items.length !== 0 && (
           <div className="draw-block">
             <Grid.Row>
@@ -192,7 +188,7 @@ class App extends Component {
                     <TextLoop
                       className="draw-text"
                       interval={100}
-                      springConfig={{ stiffness: 180, damping: 8 }}
+                      springConfig={{ stiffness: 250, damping: 10 }}
                       children={newItems}
                     />
                   }
@@ -233,82 +229,7 @@ class App extends Component {
             hideConfirm={this.hideConfirm}
             location={this.props.history}
           />}
-        {/* <Grid.Row>
-          <Grid.Col xs={12} md={8}>
-            <h2>Sponsors</h2>
-            <p>Special thanks to the following companies.</p>
-            <h3>
-              Platinum Tier
-              <Button
-                href="https://www.buymeacoffee.com/jasonkam"
-                target="_blank"
-                outline
-                size="sm"
-                RootComponent="a"
-                color="primary"
-                className="contribute-button"
-              >
-                Contribute
-              </Button>
-            </h3>
-            <p>Contribute $300 or more to be featured.</p>
-          </Grid.Col>
-        </Grid.Row> */}
-        {/* <Grid.Row>
-          <Grid.Col xs={12} md={3}>
-            <a href="https://www.ecembroid.com">
-              <img
-                src="https://luckydraw.me/images/ecembroid.png"
-                alt="ECEmbroid"
-              />
-              <h3>ECEmbroid</h3>
-            </a>
-          </Grid.Col>
-          <Grid.Col xs={12} md={3}>
-            <a href="http://theroofingspecialist.sg/">
-              <img
-                src="https://luckydraw.me/images/theroofingspecialist.png"
-                alt="JKRoof"
-              />
-              <h3>The Roofing Specialist</h3>
-            </a>
-          </Grid.Col>
-          <Grid.Col xs={12} md={3}>
-            <a href="https://www.jkroof.com.sg/">
-              <img src="https://luckydraw.me/images/JKRoof.png" alt="JKRoof" />
-              <h3>J&K Roof Contractors</h3>
-            </a>
-          </Grid.Col>
-        </Grid.Row>
-        <hr />
-        <Grid.Row>
-          <Grid.Col xs={12} md={6}>
-            <h2>What Our Users Say</h2>
-            <div class="powr-reviews" id="83081483_1602856389"></div>
-          </Grid.Col>
-          <Grid.Col xs={12} md={6}>
-            <div
-              class="fb-page"
-              data-href="https://www.facebook.com/luckydraw.me/"
-              data-tabs="timeline"
-              data-width=""
-              data-height=""
-              data-small-header="true"
-              data-adapt-container-width="true"
-              data-hide-cover="false"
-              data-show-facepile="true"
-            >
-              <blockquote
-                cite="https://www.facebook.com/luckydraw.me/"
-                class="fb-xfbml-parse-ignore"
-              >
-                <a href="https://www.facebook.com/luckydraw.me/">
-                  LuckyDraw.me
-                </a>
-              </blockquote>
-            </div>
-          </Grid.Col>
-        </Grid.Row> */}
+
       </SiteWrapper>
     );
   }

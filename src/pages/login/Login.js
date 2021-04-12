@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../register/Register.css";
 import { Button, Grid, Form } from "tabler-react";
+import "./Login.css"
+import logo from '../../assets/images/logo.png'
 
 class Login extends Component {
   state = {
@@ -32,7 +34,7 @@ class Login extends Component {
     } else if (pwd === "") {
       this.setState({ loading: false, pwdErorr: true });
     }
-    else{
+    else {
       let formdata = new FormData();
 
       formdata.append("username", username.toLowerCase());
@@ -45,23 +47,26 @@ class Login extends Component {
         .then((result) => {
           if (result.message === "Login Successful") {
             this.setState({ loading: false });
-  
+
             localStorage.setItem("user", JSON.stringify({ username, pwd }));
             this.props.history.push("/register");
           } else {
-            this.setState({ loading: false,emailPwdErorr: true });
+            this.setState({ loading: false, emailPwdErorr: true });
             console.log("inncorrect");
           }
         })
         .catch((err) => this.setState({ loading: false }));
     }
-   
+
   };
   render() {
     const { userNameErorr, pwdErorr, emailPwdErorr } = this.state;
     return (
       <div className="container">
-        <div className="form-wrapper">
+        <div className="img">
+          <img style={{width: "150px", height:"80px"}} src={logo}/>
+        </div>
+        {/* <div className="form-wrapper"> */}
           <div className="login-form-element">
             {/* <Form onSubmit={this.onLogin}> */}
             <Grid.Row>
@@ -88,7 +93,7 @@ class Login extends Component {
                     icon="user"
                     type="password"
                     placeholder="Password"
-                    onFocus={() => this.setState({ pwdErorr: false,emailPwdErorr: false })}
+                    onFocus={() => this.setState({ pwdErorr: false, emailPwdErorr: false })}
                     onChange={(e) => this.setState({ pwd: e.target.value })}
                     secureTextEntry={this.state.hidePassword}
                   />
@@ -115,7 +120,6 @@ class Login extends Component {
                     color="primary"
                     type="submit"
                     loading={this.state.loading}
-                    size="lg"
                     onClick={this.onLogin}
                   >
                     Login
@@ -125,7 +129,7 @@ class Login extends Component {
             </Grid.Row>
             {/* </Form> */}
           </div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

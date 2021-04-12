@@ -21,10 +21,18 @@ class Main extends Component {
                         <Row>
                             <Col xs={12} md={12}>
                                 Looking for your dream car? or dream bike? or want to buy Gold but don't have enough money?
-                                or want to buy your dream house..?<br/>
-                                <b>Don't worry now... beacuse My Dream Committee got you covered..</b><br/>
+                                or want to buy your dream house..?<br />
+                                <b>Don't worry now... beacuse My Dream Committee got you covered..</b><br />
                                 We are a orginization which holds different committees at different times for car, bike, mobile,
                                 Gold, tractor and many more.....
+                                <hr/>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                Dream Committee is the privately-owned lucky draw providing company in Pakistan. Having hundreds of trusted customers,
+                                the dream committee deals in providing easy and most effective solutions to make your dreams come true with its different types of committees in Pakistan.
+                                <hr/>
                             </Col>
                         </Row>
                     </Container>
