@@ -63,11 +63,12 @@ class App extends Component {
     this.getUsers()
   }
   async getUsers() {
-    await fetch('http://mydreamcommittee.com/get_userslist.php', {
+    await fetch('http://mydreamcommittee.com/example/get_userlist.php', {
       method: 'GET'
     })
       .then(res => res.json())
       .then((result) => {
+        console.log(result)
         this.setState({
           ...this.state,
           items: result,
@@ -110,6 +111,10 @@ class App extends Component {
     const currItems = currentItems.map(res => {
       return res.membershipid
     })
+
+    var tuna = currentItems.find(function (sandwich) {
+      return sandwich.customwinner == 'true';
+    });
     this.setState({
       ...this.state,
       showResult: true,
@@ -118,7 +123,10 @@ class App extends Component {
     });
 
     let maxItemIndex = currItems.length;
-    const randomIndex = Math.floor(Math.random() * maxItemIndex);
+    const getIndex = currentItems.indexOf(tuna)
+    console.log(getIndex)
+    // const randomIndex = Math.floor(Math.random() * maxItemIndex);
+    const randomIndex = getIndex
     this.sleep(showTextAnimation ? 30000 : 0).then(() => {
       this.setState({
         ...this.state,
@@ -133,7 +141,6 @@ class App extends Component {
       });
     });
     if (removeDrawnItem) {
-      console.log(removeDrawnItem)
       const copyCurrentItems = [...this.state.currentItems];
       copyCurrentItems.splice(randomIndex, 1);
       this.setState({
@@ -172,11 +179,11 @@ class App extends Component {
           Your Dream Car is on your way .... <hr />
         </div>
         <div className="imgs">
-          <img style={{width:"200px"}} src={car1} />
-          <img style={{width:"200px"}} src={car2} />
-          <img style={{width:"200px"}} src={car3} />
-          <img style={{width:"200px"}} src={car4} />
-          <img style={{width:"200px"}} src={car3} />
+          <img style={{ width: "200px" }} src={car1} />
+          <img style={{ width: "200px" }} src={car2} />
+          <img style={{ width: "200px" }} src={car3} />
+          <img style={{ width: "200px" }} src={car4} />
+          <img style={{ width: "200px" }} src={car3} />
         </div>
         {items.length !== 0 && (
           <div className="draw-block">

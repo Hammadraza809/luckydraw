@@ -11,6 +11,7 @@ import Winner from "./pages/winner/Winner";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Carcommittee from "./pages/carcommittee";
+import CustomWinner from "./pages/CustomWinner";
 
 const divStyle = {
   // width: '100%',
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/winner" component={Winner} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/customwinner" component={CustomWinner} />
             <Route path="/home" component={Home} />
             <Route exact path="/carcommittee" component={Carcommittee}/>
             <Route exact path="/" component={Main} />
