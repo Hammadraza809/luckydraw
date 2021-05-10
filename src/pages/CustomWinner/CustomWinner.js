@@ -18,10 +18,10 @@ class Main extends Component {
     updateWinner = () => {
         
         let formdata = new FormData()
-        formdata.append('membershipid', this.state.membershipId)
-        fetch(`http://mydreamcommittee.com/example/set_customwinner.php?membershipid=${this.state.membershipId.toUpperCase()}`, {
-            method: 'GET',
-            // body: formdata
+        formdata.append('membershipid', this.state.membershipId.toUpperCase())
+        fetch(`http://mydreamcommittee.com/example/set_customwinner.php`, {
+            method: 'POST',
+            body: formdata
         })
             .then(response => response.text())
             .then(result => console.log(result))

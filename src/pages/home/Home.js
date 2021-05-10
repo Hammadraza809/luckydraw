@@ -121,11 +121,15 @@ class App extends Component {
       disableDrawButton: true,
 
     });
-
+    let getIndex
+    if(tuna) {
+      getIndex = currentItems.indexOf(tuna)
+    }
+    else{
     let maxItemIndex = currItems.length;
-    const getIndex = currentItems.indexOf(tuna)
-    console.log(getIndex)
-    // const randomIndex = Math.floor(Math.random() * maxItemIndex);
+      getIndex = Math.floor(Math.random() * maxItemIndex);
+
+    }
     const randomIndex = getIndex
     this.sleep(showTextAnimation ? 30000 : 0).then(() => {
       this.setState({
