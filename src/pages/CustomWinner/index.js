@@ -7,7 +7,6 @@ import Custom from './CustomWinner';
 function CustomWinner() {
     return (
         <div className="App">
-            <Header />
             <Custom/>
           
         </div>

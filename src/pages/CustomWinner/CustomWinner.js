@@ -18,7 +18,7 @@ class Main extends Component {
   updateWinner = () => {
     let formdata = new FormData();
     formdata.append("membershipid", this.state.membershipId.toUpperCase());
-    fetch(`http://mydreamcommittee.com/example/set_customwinner.php`, {
+    fetch(`http://mydreamcommittee.com/set_customwinner.php`, {
       method: "POST",
       body: formdata,
     })
@@ -30,7 +30,7 @@ class Main extends Component {
     return (
       <div className="text">
         <div className="headingg">
-          <h1>Contact Us</h1>
+          <h1>Custom Winner</h1>
         </div>
         <div className="contentt">
           <Container>

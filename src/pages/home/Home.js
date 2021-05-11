@@ -63,7 +63,7 @@ class App extends Component {
     this.getUsers()
   }
   async getUsers() {
-    await fetch('http://mydreamcommittee.com/example/get_userlist.php', {
+    await fetch('http://mydreamcommittee.com/get_userslist.php', {
       method: 'GET'
     })
       .then(res => res.json())
@@ -123,6 +123,7 @@ class App extends Component {
     });
     let getIndex
     if(tuna) {
+      console.log(tuna);
       getIndex = currentItems.indexOf(tuna)
     }
     else{
